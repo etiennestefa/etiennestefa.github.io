@@ -1,3 +1,8 @@
 theme: jekyll-theme-slate
 title: Stefano Savino
 language: "en" 
+docs_list_title: ACME Documentation
+docs:
+
+- title: Introduction
+  url: index.html
