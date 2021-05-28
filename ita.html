@@ -8,5 +8,11 @@ layout: default
         <li>Contacts</li>
     </ul>
     <p>Italiano 1</p>
-    <link rel="import" href="https://etiennestefa.github.io/eng.html">
+    <script type="text/javascript">
+        var url = "https://etiennestefa.github.io/eng.html";
+    
+        $.get(url, function (data) {
+            alert("Page Source: " + data);
+        });
+    </script>
 </body>
