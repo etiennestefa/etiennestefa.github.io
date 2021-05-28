@@ -11,8 +11,8 @@ layout: default
     <script type="text/javascript">
         var url = "https://etiennestefa.github.io/eng.html";
     
-        $.get(url, function (data) {
-            alert("Page Source: " + data);
+        $.get(url, function(data){
+            $(this).children("div:first").html(data);
         });
     </script>
 </body>
