@@ -2,6 +2,8 @@
 layout: default
 language: ita
 ---
+
+<!-- SCRIPT PER CARICARE IL CONTENUTO DI ALTRI FILE HTML - FONTE W3SCHOOL-->
 <script>
     function includeHTML() {
         var z, i, elmnt, file, xhttp;
@@ -10,7 +12,7 @@ language: ita
         for (i = 0; i < z.length; i++) {
         elmnt = z[i];
         /*search for elements with a certain atrribute:*/
-        file = elmnt.getAttribute("w3-include-html");
+        file = elmnt.getAttribute("section-source");
             if (file) {
                 /*make an HTTP request using the attribute value as the file name:*/
                 xhttp = new XMLHttpRequest();
@@ -19,7 +21,7 @@ language: ita
                         if (this.status == 200) {elmnt.innerHTML = this.responseText;}
                         if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
                         /*remove the attribute, and call this function once more:*/
-                        elmnt.removeAttribute("w3-include-html");
+                        elmnt.removeAttribute("section-source");
                         includeHTML();
                     }
                 }      
@@ -32,8 +34,9 @@ language: ita
     };    
 </script>
 
+<!-- PAGINA -->
 <body>
-
+    <!-- SCELTA LINGUA -->
     <table>
         <caption>
             <strong>Lingua</strong>
@@ -50,22 +53,25 @@ language: ita
             </td>
         </tr>
     </table>
-    
+    <!-- LINGUA ATTUALE -->
     <h1>Italiano</h1>
+    <!-- MENÙ SEZIONI -->
     <ul>
-        <li><strong><a href="#biography">Biografia</a></strong></li>
-        <li><strong><a href="#skills">Conoscenze</a></strong></li>
-        <li><strong><a href="#didactics">Didattica</a></strong></li>
-        <li><strong><a href="#projects">Progetti</a></strong></li>
-        <li><strong><a href="#research">Ricerca</a></strong></li>
-        <li><strong><a href="#contacts">Contatti</a></strong></li>
+        <li>    <strong>    <a href="#biography">Biografia</a>  </strong>   </li>
+        <li>    <strong>    <a href="#skills">Conoscenze</a>    </strong>   </li>
+        <li>    <strong>    <a href="#didactics">Didattica</a>  </strong>   </li>
+        <li>    <strong>    <a href="#projects">Progetti</a>    </strong>   </li>
+        <li>    <strong>    <a href="#research">Ricerca</a>     </strong>   </li>
+        <li>    <strong>    <a href="#contacts">Contatti</a>    </strong>   </li>
     </ul>
-    <div w3-include-html="https://etiennestefa.github.io/pages/biography/ita.html"></div>
-    <div w3-include-html="https://etiennestefa.github.io/pages/skills/ita.html"></div>
-    <div w3-include-html="https://etiennestefa.github.io/pages/didactics/ita.html"></div>
-    <div w3-include-html="https://etiennestefa.github.io/pages/projects/ita.html"></div>
-    <div w3-include-html="https://etiennestefa.github.io/pages/research/ita.html"></div>
-    <div w3-include-html="https://etiennestefa.github.io/pages/contacts/ita.html"></div>
+    <!-- SEZIONI -->
+    <div section-source="https://etiennestefa.github.io/pages/biography/ita.html"></div>
+    <div section-source="https://etiennestefa.github.io/pages/skills/ita.html"></div>
+    <div section-source="https://etiennestefa.github.io/pages/didactics/ita.html"></div>
+    <div section-source="https://etiennestefa.github.io/pages/projects/ita.html"></div>
+    <div section-source="https://etiennestefa.github.io/pages/research/ita.html"></div>
+    <div section-source="https://etiennestefa.github.io/pages/contacts/ita.html"></div>
+    <!-- ESECUZIONE DELLO SCRIPT -->
     <script>
         includeHTML();
     </script>
