@@ -53,26 +53,25 @@
         <h1>Catania 14</h1>
         <p>Sito del gruppo scout AGESCI Catania 14</p>
     </div>
-    <!-- LINGUA ATTUALE -->
-    <h1>Italiano</h1>
-    <!-- MENÙ SEZIONI -->
-    <ul>
-        <li>    <strong>    <a href="#gruppo">Il Gruppo</a>  </strong>   </li>
-        <li>    <strong>    <a href="#sede">La Sede</a>    </strong>   </li>
-        <li>    <strong>    <a href="#bilancio">Bilancio Annuale</a>  </strong>   </li>
-        <li>    <strong>    <a href="#contatti">Contatti</a>    </strong>   </li>
-    </ul>
+    <!-- SLIDER -->
+    <div class="section">
+        <div class="pageitem">
+            <div id="slider">
+                <figure>
+                    <img src="http://lorempixel.com/g/680/300/people/1" alt>
+                    <img src="http://lorempixel.com/g/680/300/nature/1" alt>
+                    <img src="http://lorempixel.com/g/680/300/city/1" alt>
+                    <img src="http://lorempixel.com/g/680/300/people/1" alt> <!-- note 1st image is also the last -->
+                </figure>
+            </div>
+        </div>
+    </div>
     <!-- SEZIONI -->
-    <div section-source="../ciao.html"></div>
     <div section-source="../pages/gruppo/ita.html"></div>
     <div section-source="../pages/sede/ita.html"></div>
     <div section-source="../pages/bilancio/ita.html"></div>
     <div section-source="../pages/contatti/ita.html"></div>
     <link href="../ciao.html" rel="import" />
-    <link href="/home/stefano/Scrivania/AGESCI Catania 14 onepage/ciao.html" rel="import" />
-
-    <iframe src="../ciao.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
-
     <!-- ESECUZIONE DELLO SCRIPT -->
     <script>
         includeHTML();
