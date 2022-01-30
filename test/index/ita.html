@@ -1,0 +1,92 @@
+
+
+<!-- HEADER -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Random by mlpdesign.net</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" lang="en" content="open source html and css template">
+    <meta name="author" content="mlp design">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../slidy.css">
+</head>
+
+<!-- SCRIPT PER CARICARE IL CONTENUTO DI ALTRI FILE HTML - FONTE W3SCHOOL-->
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("section-source");
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                        if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("section-source");
+                        includeHTML();
+                    }
+                }      
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /*exit the function:*/
+                return;
+            }
+        }
+    };    
+</script>
+
+<!-- PAGINA -->
+<body>
+    <!-- MENU -->
+    <div section-source="../menu/menu.html"></div>
+    <table border="1">
+        <caption>
+            <strong>Lingua</strong>
+        </caption>
+        <tr>
+            <td>
+                <a href="../index/ita.html">Italiano</a>
+            </td>
+            <td>
+                <a href="../index/eng.html">English</a>
+            </td>
+            <td>
+                <a href="../index/fra.html">Français</a>
+            </td>
+        </tr>
+    </table>
+    <!-- LINGUA ATTUALE -->
+    <h1>Italiano</h1>
+    <!-- MENÙ SEZIONI -->
+    <ul>
+        <li>    <strong>    <a href="#gruppo">Il Gruppo</a>  </strong>   </li>
+        <li>    <strong>    <a href="#sede">La Sede</a>    </strong>   </li>
+        <li>    <strong>    <a href="#bilancio">Bilancio Annuale</a>  </strong>   </li>
+        <li>    <strong>    <a href="#contatti">Contatti</a>    </strong>   </li>
+    </ul>
+    <!-- SEZIONI -->
+    <div section-source="../ciao.html"></div>
+    <div section-source="../pages/gruppo/ita.html"></div>
+    <div section-source="../pages/sede/ita.html"></div>
+    <div section-source="../pages/bilancio/ita.html"></div>
+    <div section-source="../pages/contatti/ita.html"></div>
+    <link href="../ciao.html" rel="import" />
+    <link href="/home/stefano/Scrivania/AGESCI Catania 14 onepage/ciao.html" rel="import" />
+
+    <iframe src="../ciao.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+    <!-- ESECUZIONE DELLO SCRIPT -->
+    <script>
+        includeHTML();
+    </script>
+</body>
+
