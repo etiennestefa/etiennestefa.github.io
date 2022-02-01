@@ -1,63 +1,64 @@
-<!-- HEADER -->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AGESCI Catania 14</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="Description" lang="en" content="open source html and css template">
-    <meta name="author" content="mlp design">
-    <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../slidy.css">
-</head>
-
-<!-- SCRIPT PER CARICARE IL CONTENUTO DI ALTRI FILE HTML - FONTE W3SCHOOL-->
-<script>
-    function includeHTML() {
-        var z, i, elmnt, file, xhttp;
-        /*loop through a collection of all HTML elements:*/
-        z = document.getElementsByTagName("*");
-        for (i = 0; i < z.length; i++) {
-        elmnt = z[i];
-        /*search for elements with a certain atrribute:*/
-        file = elmnt.getAttribute("section-source");
-            if (file) {
-                /*make an HTTP request using the attribute value as the file name:*/
-                xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4) {
-                        if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                        if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                        /*remove the attribute, and call this function once more:*/
-                        elmnt.removeAttribute("section-source");
-                        includeHTML();
-                    }
-                }      
-                xhttp.open("GET", file, true);
-                xhttp.send();
-                /*exit the function:*/
-                return;
-            }
-        }
-    };    
-</script>
-
-<!-- PAGINA -->
-<body>
-    <!-- MENU -->
-    <div section-source="../menu/menu.html"></div>
-    <!-- TITOLO-->
-    <div section-source="../header/header.html"></div>
-    <!-- SLIDER -->
-    <div section-source="../slider/slider.html"></div>
-    <!-- SEZIONI -->
-    <div section-source="../pages/gruppo/ita.html"></div>
-    <div section-source="../pages/sede/ita.html"></div>
-    <div section-source="../pages/bilancio/ita.html"></div>
-    <div section-source="../pages/contatti/ita.html"></div>
-    <!-- ESECUZIONE DELLO SCRIPT -->
+<!DOCTYPE html>
+<!-- PAGINA PRINCIPALE -->
+<html>
+    <!-- HEADER -->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>AGESCI Catania 14</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="Description" lang="it" content="Sito del Gruppo Scout Nautico AGESCI Catania 14">
+        <meta name="author" content="Catania 14">
+        <meta name="robots" content="index, follow">
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="../slidy.css">
+    </head>
+    <!-- SCRIPT PER CARICARE IL CONTENUTO DI ALTRI FILE HTML - FONTE W3SCHOOL-->
     <script>
-        includeHTML();
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /*loop through a collection of all HTML elements:*/
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("section-source");
+                if (file) {
+                    /*make an HTTP request using the attribute value as the file name:*/
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                            /*remove the attribute, and call this function once more:*/
+                            elmnt.removeAttribute("section-source");
+                            includeHTML();
+                        }
+                    }      
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /*exit the function:*/
+                    return;
+                }
+            }
+        };    
     </script>
-</body>
-
+    <!-- PAGINA -->
+    <body>
+        <!-- MENU -->
+        <div section-source="../menu/menu.html"></div>
+        <!-- TITOLO-->
+        <div section-source="../header/header.html"></div>
+        <!-- SLIDER -->
+        <div section-source="../slider/slider.html"></div>
+        <!-- SEZIONI -->
+        <div section-source="../pages/gruppo/ita.html"></div>
+        <div section-source="../pages/sede/ita.html"></div>
+        <div section-source="../pages/bilancio/ita.html"></div>
+        <div section-source="../pages/contatti/ita.html"></div>
+        <!-- ESECUZIONE DELLO SCRIPT -->
+        <script>
+            includeHTML();
+        </script>
+    </body>
+</html>
