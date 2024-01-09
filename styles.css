@@ -1,9 +1,9 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
 
-body { background-color:#CCC8AA; background-image: url(./sources/body-bg.png); color: #555; font-family: 'Noto Sans', sans-serif; font-size: 93%; font-weight:normal;margin: 0; }
+body { background-color:#F8F0E5; /*background-image: url(./sources/body-bg.png);*/ color: #555; font-family: 'Noto Sans', sans-serif; font-size: 93%; font-weight:normal;margin: 0; }
 a:link, a:visited, a:active{ color:inherit; text-decoration: none; }
-a:hover {color: #191717; text-decoration:underline; }
+a:hover {color: #0F2C59; text-decoration:underline; }
 
 .right {text-align:right; }
 .hide {display: none;}
@@ -26,7 +26,7 @@ nav {
 #menu {
     width:100%;
     min-height:35px;
-    background-color: #191717;
+    background-color: #0F2C59;
     position:fixed;
     z-index:100;
     top:0; left:0;
