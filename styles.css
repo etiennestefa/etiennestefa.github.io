@@ -188,7 +188,7 @@ ul#topnav li> ul > li >a{
     font-size: 18px;
     border: none;
     outline: none;
-    background-color: black;
+    background-color: #0F2C59;
     color: white;
     cursor: pointer;
     padding: 15px;
@@ -215,7 +215,7 @@ ul#topnav {display:none;}
 #show-menu:checked ~ .open {display:none;}
 #show-menu:checked ~ .close {font-size:1.6em; display:block;}
 #show-menu:checked ~ ul#topnav { display: block; position: absolute; top:100%; right:0%; width:100%; margin:0; margin-bottom:1%; overflow:visible; }
-ul#topnav li { display: block; text-align:center; margin:0; background-color:#000; padding:1% 0;}
+ul#topnav li { display: block; text-align:center; margin:0; background-color:#0F2C59; padding:1% 0;}
 
 ul#topnav li a { display: block; padding-right:0%; padding-bottom:5px; text-decoration:none;}
 ul#topnav li a:hover {text-decoration:underline;}
